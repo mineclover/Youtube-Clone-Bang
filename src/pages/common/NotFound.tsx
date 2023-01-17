@@ -21,7 +21,6 @@ const NotFound = (props: Props) => {
         </p>
       </div>
       <Link to="/">
-        홈으로
         <Lottie animationData={arrow} loop></Lottie>
       </Link>
     </article>
