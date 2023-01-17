@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  .areaComponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .appIcon {
+    height: 40px;
+    box-sizing: border-box;
+  }
+
+  .searchContainer {
+    width: 500px;
+    height: 40px;
+    display: flex;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 25px;
+  }
+}

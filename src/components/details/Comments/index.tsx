@@ -1,4 +1,5 @@
 import React from 'react';
+import ContentHeader from './ContentHeader';
 import Contents from './Contents';
 
 type Props = {};
@@ -6,7 +7,7 @@ type Props = {};
 const Comments = (props: Props) => {
   return (
     <div id="comments">
-      {/* <Header /> */}
+      <ContentHeader />
       <Contents />
     </div>
   );
