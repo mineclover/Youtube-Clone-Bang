@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './Navigation.module.scss';
+import { LeftProps } from './Left';
 
-type Props = {};
+type NavProps = LeftProps;
 
-const Navigation = (props: Props) => {
+const Navigation = (props: NavProps) => {
   return (
-    <button className={styles.nav}>
+    <button className={styles.nav} onClick={() => props.setWide(!props.wide)}>
       <div className="icon">
         <svg
           viewBox="0 0 24 24"
