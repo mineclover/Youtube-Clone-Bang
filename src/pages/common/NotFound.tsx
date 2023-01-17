@@ -8,25 +8,6 @@ import { Link } from 'react-router-dom';
 type Props = {};
 
 const NotFound = (props: Props) => {
-  const obj: any = useRef(null);
-
-  const interactivity: any = {
-    lottieObj: obj,
-    mode: 'cursor',
-    actions: [
-      {
-        position: { x: [0, 1], y: [0, 1] },
-        type: 'stop',
-        frames: [40],
-      },
-      {
-        position: { x: -1, y: -1 },
-        type: 'loop',
-        frames: [0, 40],
-      },
-    ],
-  };
-
   return (
     <article className={styles.notFound}>
       <div className={styles.lottie}>
@@ -41,7 +22,7 @@ const NotFound = (props: Props) => {
       </div>
       <Link to="/">
         홈으로
-        <Lottie animationData={arrow} interactivity={interactivity} ref={obj}></Lottie>
+        <Lottie animationData={arrow} loop></Lottie>
       </Link>
     </article>
   );
