@@ -7,7 +7,7 @@ import SearchResult from './components/search-result';
 import Video from './components/details';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFound from './pages/common/NotFound';
-import Comments from './components/details/Comments';
+import Details from './components/details';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +25,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   // <React.StrictMode>
   // <RouterProvider router={router} />
-  <Comments />
+  <Details />
   // </React.StrictMode>
 );

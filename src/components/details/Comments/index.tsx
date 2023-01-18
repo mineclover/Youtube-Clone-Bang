@@ -1,14 +1,15 @@
 import React from 'react';
-import ContentHeader from './ContentHeader';
-import Contents from './Contents';
+import CommentHeader from './CommentHeader';
+import Commentlist from './CommentList';
+import styles from './Comments.module.scss';
 
 type Props = {};
 
 const Comments = (props: Props) => {
   return (
     <div id="comments">
-      <ContentHeader />
-      <Contents />
+      <CommentHeader />
+      <Commentlist />
     </div>
   );
 };

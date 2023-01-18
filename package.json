@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "sync": "git switch develop && git pull upstream develop"
+    "sync": "git switch develop && git pull upstream develop && npm i"
   },
   "dependencies": {
     "@types/react-lottie": "^1.2.6",
