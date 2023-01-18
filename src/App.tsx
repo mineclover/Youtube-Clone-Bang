@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg';
 import './App.scss';
 import Header from './components/header';
 import { Outlet } from 'react-router-dom';
-import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
+import { RecoilRoot } from 'recoil';
 
 function App() {
   return (
