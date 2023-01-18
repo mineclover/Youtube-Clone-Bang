@@ -1,0 +1,12 @@
+.container {
+  margin: 30px;
+
+  .lists {
+    display: flex;
+  }
+  .img {
+    width: 400px;
+    height: 220px;
+    object-fit: cover;
+  }
+}

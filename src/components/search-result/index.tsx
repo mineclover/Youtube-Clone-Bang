@@ -2,10 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import List from './List';
+import styles from './search.module.scss';
 
 type Props = {};
 
-const instance = axios.create({
+export const instance = axios.create({
   baseURL: 'https://youtube.googleapis.com/youtube/v3',
   params: {
     key: import.meta.env.VITE_API_KEY,
@@ -18,9 +19,9 @@ const index = (props: Props) => {
   useEffect(() => {
     const searchResult = async () => {
       try {
-        const response = await instance.get(`/search?part=snippet&maxResults=10&q={animal}`);
+        const response = await instance.get(`/search?part=snippet&maxResults=10&q={cat}`);
         if (response.status === 200) {
-          setSearchData(response.data);
+          setSearchData(response.data.items);
         }
       } catch (error) {
         console.log(error);
@@ -29,10 +30,8 @@ const index = (props: Props) => {
     searchResult();
   }, []);
 
-  console.log(searchData);
-
   return (
-    <div>
+    <div className={styles.container}>
       {Array.isArray(searchData) ? (
         searchData.map((data, index) => {
           return <List key={index} data={data} />;
