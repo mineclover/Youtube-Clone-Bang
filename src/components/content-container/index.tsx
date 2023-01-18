@@ -1,5 +1,4 @@
 import React from 'react';
-import ContentHeader from './ContentHeader';
 import BasicItem from './BasicItem';
 
 type Props = {};

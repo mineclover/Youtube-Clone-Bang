@@ -3,15 +3,10 @@ import Navigation from './Navigation';
 import AppLogo from './AppLogo';
 import styles from './header.module.scss';
 
-export type LeftProps = {
-  wide: boolean;
-  setWide: (wide: boolean) => void;
-};
-
-const Left = (props: LeftProps) => {
+const Left = () => {
   return (
     <div className={styles.areaComponent}>
-      <Navigation wide={props.wide} setWide={props.setWide} />
+      <Navigation />
       <AppLogo />
       <span id="country-code">KR</span>
     </div>

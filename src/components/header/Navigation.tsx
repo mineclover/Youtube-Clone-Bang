@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from './Navigation.module.scss';
-import { LeftProps } from './Left';
+import { sideBarstate } from '../../Atom';
+import { useRecoilState } from 'recoil';
 
-type NavProps = LeftProps;
+const Navigation = () => {
+  const [sideBar, setSideBar] = useRecoilState(sideBarstate);
 
-const Navigation = (props: NavProps) => {
   return (
-    <button className={styles.nav} onClick={() => props.setWide(!props.wide)}>
+    <button className={styles.nav} onClick={() => setSideBar(!sideBar)}>
       <div className="icon">
         <svg
           viewBox="0 0 24 24"
