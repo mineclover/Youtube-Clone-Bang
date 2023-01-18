@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './header.module.scss';
+import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 
 type Props = {};
 
 const AppLogo = (props: Props) => {
   return (
-    <Link to="/" className={styles.appIcon}>
+    <Link to="/" className={styles.appLogo}>
       <svg
         viewBox="0 0 90 20"
         preserveAspectRatio="xMidYMid meet"

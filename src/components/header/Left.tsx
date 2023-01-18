@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation';
 import AppLogo from './AppLogo';
-import styles from './header.module.scss';
+import styles from './Header.module.scss';
 
 const Left = () => {
   return (

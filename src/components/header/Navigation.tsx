@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Navigation.module.scss';
+import styles from './Header.module.scss';
 import { sideBarstate } from '../../Atom';
 import { useRecoilState } from 'recoil';
 
