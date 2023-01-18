@@ -7,7 +7,7 @@ type Props = {};
 const Comments = (props: Props) => {
   return (
     <div id={styles.comments}>
-      <div className="">
+      <div className={styles.flex}>
         <span className={styles.profileImg}>{/* <img src="" alt="프로필 이미지" /> */}</span>
         <input className={styles.commentInput} type="text" placeholder="댓글 추가..." />
       </div>

@@ -76,20 +76,9 @@ export const commentThreads = ({ videoId = '', data = {} }) => {
   console.log(videoId);
   console.log(data);
   const sending = {
-    // part: 'snippet',
+    part: 'snippet',
     videoId,
-    // maxResults: 3,
+    maxResults: 5,
   };
   return instance.get(`/commentThreads`, { params: { ...sending, ...data } });
-};
-
-export const replyThreads = ({ data = {} }) => {
-  // console.log(videoId);
-  console.log(data);
-  // const sending = {
-  //   // part: 'snippet',
-  //   videoId,
-  //   // maxResults: 3,
-  // };
-  return instance.get(`/commentThreads`, { params: { ...data } });
 };

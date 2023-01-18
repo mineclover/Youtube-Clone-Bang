@@ -40,7 +40,7 @@ const Commentlist = (Props: Props) => {
       setCommentList([]);
       try {
         const res = await commentThreads({ videoId, data });
-        console.log('res.items: ', res.data.items);
+        console.log('res.items: ', res);
         setCommentList(res.data.items);
       } catch (error) {
         if (error instanceof Error) alert('조회 실패:' + error.message);
