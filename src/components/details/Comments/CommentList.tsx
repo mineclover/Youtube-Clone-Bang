@@ -13,21 +13,21 @@ const Commentlist = (Props: Props) => {
 
   // commentThreads()
 
-  const getComments = async (videoId: string) => {
-    const url = 'https://youtube.googleapis.com/youtube/v3/commentThreads?';
-    let data = {
-      params: {
-        part: 'snippet',
-        maxResults: 5,
-        order: 'relevance',
-        videoId,
-        key: import.meta.env.VITE_API_KEY,
-      },
-    };
-    const res = await axios.get(url, data);
-    console.log('res.data: ', res.data);
-    return res.data;
-  };
+  // const getComments = async (videoId: string) => {
+  //   const url = 'https://youtube.googleapis.com/youtube/v3/commentThreads?';
+  //   let data = {
+  //     params: {
+  //       part: 'snippet',
+  //       maxResults: 5,
+  //       order: 'relevance',
+  //       videoId,
+  //       key: import.meta.env.VITE_API_KEY,
+  //     },
+  //   };
+  //   const res = await axios.get(url, data);
+  //   console.log('res.data: ', res.data);
+  //   return res.data;
+  // };
 
   let data = {
     params: {
@@ -57,7 +57,7 @@ const Commentlist = (Props: Props) => {
   return (
     <div>
       {commentList.map((comment, index) => (
-        <Comment key={index} comment={comment} getComments={getComments} />
+        <Comment key={index} comment={comment} />
       ))}
     </div>
   );

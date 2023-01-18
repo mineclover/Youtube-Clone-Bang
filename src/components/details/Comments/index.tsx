@@ -7,7 +7,7 @@ type Props = {};
 
 const Comments = (props: Props) => {
   return (
-    <div id="comments">
+    <div id={styles.comments}>
       <CommentHeader />
       <Commentlist />
     </div>

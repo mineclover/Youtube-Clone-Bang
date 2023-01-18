@@ -1,19 +1,28 @@
 import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import dayjs, { Dayjs } from 'dayjs';
+import useDay from '../../../hooks/useDay';
 import styles from './Comments.module.scss';
-import Reply from './Reply';
 
 type Props = {
   comment: any;
 };
 
-const Comment = ({ comment, getComments }: Props) => {
+const Comment = ({ comment }: Props) => {
   const displayName = comment.snippet.topLevelComment.snippet.authorDisplayName;
   const profileImg = comment.snippet.topLevelComment.snippet.authorProfileImageUrl;
   const text = comment.snippet.topLevelComment.snippet.textOriginal;
   const likeCount = comment.snippet.topLevelComment.snippet.likeCount;
   const totalReplyCount = comment.snippet.totalReplyCount;
+
+  const [date, setDate] = useState<Dayjs | null>(null);
+  let today = useDay(dayjs(date));
+
+  useEffect(() => {
+    setDate(comment.snippet.topLevelComment.snippet.publishedAt);
+  }, []);
+
   return (
     <div className={styles.commentItem}>
       <div>
@@ -23,7 +32,7 @@ const Comment = ({ comment, getComments }: Props) => {
       </div>
       <div>
         <span>{displayName}</span>
-        <span>1일 전</span>
+        <span>{today}</span>
         <div>{text}</div>
         <div className={styles.toolbar}>
           <span className="">

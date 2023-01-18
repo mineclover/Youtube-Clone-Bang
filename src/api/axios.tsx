@@ -76,7 +76,7 @@ export const commentThreads = (videoId: string, data: object = {}) => {
   const sending = {
     part: 'snippet',
     videoId: videoId,
-    maxResults: 10,
+    maxResults: 5,
   };
   return instance.get(`/commentThreads`, { params: { ...sending, ...data } });
 };

@@ -7,7 +7,7 @@ const CommentHeader = (props: Props) => {
   return (
     <div>
       <span className={styles.profileImg}>{/* <img src="" alt="프로필 이미지" /> */}</span>
-      <input type="text" placeholder="댓글 추가..." />
+      <input className={styles.commentInput} type="text" placeholder="댓글 추가..." />
     </div>
   );
 };
