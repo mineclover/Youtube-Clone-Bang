@@ -9,28 +9,27 @@ import styles from './Header.module.scss';
 type Props = {};
 
 const Header = () => {
-  // const [text, setText] = useState<string>('');
-  // const navigate = useNavigate();
-  // const { keyword } = useParams();
-  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   navigate(`/search/${text}`);
-  // };
+  const [text, setText] = useState<string>('');
+  const navigate = useNavigate();
+  const { keyword } = useParams();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    navigate(`/search/${text}`);
+  };
 
-  // // keyword 검색 후, 페이지 전환 시에도 해당 keyword 저장하기 위함
-  // useEffect(() => {
-  //   setText(keyword || '');
-  // }, [keyword]);
+  // keyword 검색 후, 페이지 전환 시에도 해당 keyword 저장하기 위함
+  useEffect(() => {
+    setText(keyword || '');
+  }, [keyword]);
 
   return (
-    <div></div>
-    // <header className={styles.header}>
-    //   <Left />
-    //   {/* handleNav={handleNav}  */}
-    //   <Middle navgate={navigate} handleSubmit={handleSubmit} text={text} setText={setText} />
+    <header className={styles.header}>
+      <Left />
+      {/* handleNav={handleNav}  */}
+      <Middle navgate={navigate} handleSubmit={handleSubmit} text={text} setText={setText} />
 
-    //   <Right />
-    // </header>
+      <Right />
+    </header>
   );
 };
 
