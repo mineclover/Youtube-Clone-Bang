@@ -16,13 +16,11 @@ const router = createBrowserRouter([
     children: [
       { index: true, path: '/', element: <MainPage /> },
       { path: '/search/:searchQuery', element: <SearchResult /> },
-      { path: 'video/:videoId', element: <Video /> },
+      { path: '/video/:videoId', element: <Video /> },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <RouterProvider router={router} />
 );
