@@ -10,8 +10,6 @@ type MiddleProps = {
 };
 
 const Middle = (props: MiddleProps) => {
-  const [search, setSearch] = useState('');
-
   return (
     <div className={styles.middleContainer}>
       <div className={styles.searchContainer}>

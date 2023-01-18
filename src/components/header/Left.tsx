@@ -8,7 +8,9 @@ const Left = () => {
     <div className={styles.areaComponent}>
       <Navigation />
       <AppLogo />
-      <span id="country-code">KR</span>
+      <span id="country-code" className={styles.countryCode}>
+        KR
+      </span>
     </div>
   );
 };

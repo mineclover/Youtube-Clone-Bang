@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 import SideBar from '../side-bar';
 import WideSideBar from '../wide-side-bar';
