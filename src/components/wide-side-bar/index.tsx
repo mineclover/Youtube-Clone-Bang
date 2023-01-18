@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './widesideBar.module.scss';
+import styles from './wideSideBar.module.scss';
 
 type Props = {};
 
