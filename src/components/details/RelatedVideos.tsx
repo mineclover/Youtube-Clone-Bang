@@ -1,14 +1,6 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import data from '../../data';
+import { relatedToVideo } from '../../api/axios';
 import Video from './Video';
-
-const instance = axios.create({
-  baseURL: 'https://youtube.googleapis.com/youtube/v3',
-  params: {
-    key: import.meta.env.VITE_API_KEY,
-  },
-});
 
 const RelatedVideos = () => {
   let videoId = 'iuPe-dGfCz8';
@@ -16,27 +8,24 @@ const RelatedVideos = () => {
 
   const [relatedVideos, setRelatedVideos] = useState({});
 
-  const [params, setParams] = useState({
+  const data = {
     part: 'snippet',
     channelInfo: `${channelInfo}`,
     maxResults: 2,
     relatedToVideoId: `${videoId}`,
     type: 'video',
-  });
+  };
 
   useEffect(() => {
-    // async function fetchData() {
-    //   try {
-    //     const response = await instance.get('/search', {
-    //       params,
-    //     });
-    //     setRelatedVideos(response.data.items);
-    //   } catch (error) {
-    //     console.log('안나온다구요!!!!!!!!!!!!!!!!!');
-    //   }
-    // }
-    // fetchData();
-    setRelatedVideos(data.items);
+    async function fetchData() {
+      try {
+        const response = await relatedToVideo(videoId, data);
+        setRelatedVideos(response.data.items);
+      } catch (error) {
+        console.log('에러가 발생했습니다.');
+      }
+    }
+    fetchData();
   }, []);
 
   return (

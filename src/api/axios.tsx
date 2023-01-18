@@ -72,11 +72,24 @@ export const relatedToVideo = (videoId: string, data: object = {}) => {
  * @param data
  * @returns
  */
-export const commentThreads = (videoId: string, data: object = {}) => {
+export const commentThreads = ({ videoId = '', data = {} }) => {
+  console.log(videoId);
+  console.log(data);
   const sending = {
-    part: 'snippet',
-    videoId: videoId,
-    maxResults: 5,
+    // part: 'snippet',
+    videoId,
+    // maxResults: 3,
   };
   return instance.get(`/commentThreads`, { params: { ...sending, ...data } });
+};
+
+export const replyThreads = ({ data = {} }) => {
+  // console.log(videoId);
+  console.log(data);
+  // const sending = {
+  //   // part: 'snippet',
+  //   videoId,
+  //   // maxResults: 3,
+  // };
+  return instance.get(`/commentThreads`, { params: { ...data } });
 };

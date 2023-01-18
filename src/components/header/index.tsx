@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Left />
-
+      {/* handleNav={handleNav}  */}
       <Middle navgate={navigate} handleSubmit={handleSubmit} text={text} setText={setText} />
 
       <Right />

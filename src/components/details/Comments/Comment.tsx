@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import useDay from '../../../hooks/useDay';
 import styles from './Comments.module.scss';
+import { commentThreads } from '../../../api/axios';
+import Reply from './Reply';
 
 type Props = {
   comment: any;
@@ -12,15 +14,16 @@ type Props = {
 const Comment = ({ comment }: Props) => {
   const displayName = comment.snippet.topLevelComment.snippet.authorDisplayName;
   const profileImg = comment.snippet.topLevelComment.snippet.authorProfileImageUrl;
-  const text = comment.snippet.topLevelComment.snippet.textOriginal;
+  const text = comment.snippet.topLevelComment.snippet.textDisplay;
   const likeCount = comment.snippet.topLevelComment.snippet.likeCount;
   const totalReplyCount = comment.snippet.totalReplyCount;
+  const publishedAt = comment.snippet.topLevelComment.snippet.publishedAt;
 
   const [date, setDate] = useState<Dayjs | null>(null);
   let today = useDay(dayjs(date));
 
   useEffect(() => {
-    setDate(comment.snippet.topLevelComment.snippet.publishedAt);
+    setDate(publishedAt);
   }, []);
 
   return (
@@ -69,9 +72,7 @@ const Comment = ({ comment }: Props) => {
             </svg>
           </span>
         </div>
-        <div className="reply">
-          {totalReplyCount ? <button>답글 {totalReplyCount}개</button> : ''}
-        </div>
+        <Reply reply={comment} />
       </div>
     </div>
   );

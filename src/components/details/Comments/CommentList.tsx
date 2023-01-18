@@ -6,7 +6,7 @@ import { commentThreads } from '../../../api/axios';
 
 type Props = {};
 
-const videoId = 'iCdcSti70lI';
+const videoId = 'CIrR0-nkPfI';
 
 const Commentlist = (Props: Props) => {
   const [commentList, setCommentList] = useState([]);
@@ -29,21 +29,17 @@ const Commentlist = (Props: Props) => {
   //   return res.data;
   // };
 
-  let data = {
-    params: {
-      part: 'snippet',
-      maxResults: 2,
-      order: 'relevance',
-      videoId,
-      key: import.meta.env.VITE_API_KEY,
-    },
+  const data = {
+    part: 'snippet',
+    maxResults: 3,
+    order: 'relevance',
   };
 
   useEffect(() => {
     const viewComments = async () => {
       setCommentList([]);
       try {
-        const res = await commentThreads(videoId, data);
+        const res = await commentThreads({ videoId, data });
         console.log('res.items: ', res.data.items);
         setCommentList(res.data.items);
       } catch (error) {
