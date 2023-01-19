@@ -5,13 +5,15 @@ import dayjs, { Dayjs } from 'dayjs';
 import useDay from '../../../hooks/useDay';
 import styles from './Comments.module.scss';
 import { commentThreads } from '../../../api/axios';
-// import Reply from './Reply';
+import Reply from './Reply';
 
 type Props = {
   comment: any;
 };
 
 const Comment = ({ comment }: Props) => {
+  const [show, setShow] = useState();
+
   const displayName = comment.snippet.topLevelComment.snippet.authorDisplayName;
   const profileImg = comment.snippet.topLevelComment.snippet.authorProfileImageUrl;
   const text = comment.snippet.topLevelComment.snippet.textOriginal;
@@ -58,7 +60,7 @@ const Comment = ({ comment }: Props) => {
             ''
           )}
         </div>
-        {/* <Reply reply={comment} /> */}
+        <Reply reply={comment} />
       </div>
     </div>
   );
