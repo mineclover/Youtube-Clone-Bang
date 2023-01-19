@@ -5,14 +5,16 @@ import dayjs, { Dayjs } from 'dayjs';
 import useDay from '../../../hooks/useDay';
 import styles from './Comments.module.scss';
 import { commentThreads } from '../../../api/axios';
-import Reply from './Reply';
+// import Reply from './Reply';
 
 type Props = {
   comment: any;
 };
 
 const Comment = ({ comment }: Props) => {
-  const [show, setShow] = useState();
+  function toggleShow() {
+    setIsShow(!isShow);
+  }
 
   const displayName = comment.snippet.topLevelComment.snippet.authorDisplayName;
   const profileImg = comment.snippet.topLevelComment.snippet.authorProfileImageUrl;
@@ -54,13 +56,15 @@ const Comment = ({ comment }: Props) => {
           <span className={styles.btnReply}>답글</span>
         </div>
         <div className="reply">
-          {totalReplyCount ? (
-            <button className={styles.btnView}>답글 {totalReplyCount}개</button>
+          {/* {totalReplyCount ? (
+            <button className={[styles.btnView].join('')} onClick={toggleShow}>
+              답글 {totalReplyCount}개
+            </button>
           ) : (
             ''
-          )}
+          )} */}
+          <Reply reply={comment} />
         </div>
-        <Reply reply={comment} />
       </div>
     </div>
   );
