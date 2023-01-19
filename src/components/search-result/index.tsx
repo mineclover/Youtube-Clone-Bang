@@ -12,8 +12,6 @@ import { useParams } from 'react-router-dom';
 
 type Props = {};
 
-const keyword = 'puppy';
-
 const index = (props: Props) => {
   const [searchData, setSearchData] = useState([]);
   const [sideBar, setSideBar] = useRecoilState(sideBarstate);
@@ -38,7 +36,7 @@ const index = (props: Props) => {
       }
     };
     searchResult();
-  }, []);
+  }, [params.searchQuery]);
 
   console.log(searchData);
 
