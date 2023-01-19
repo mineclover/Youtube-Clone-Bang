@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './WideSideBar.module.scss';
+import styles from './wideSideBar.module.scss';
 type Props = {};
 
 const Item2 = (props: Props) => {
