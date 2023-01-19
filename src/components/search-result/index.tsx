@@ -14,6 +14,7 @@ type Props = {};
 
 const index = (props: Props) => {
   const [searchData, setSearchData] = useState([]);
+  const [sideBar, setSideBar] = useRecoilState(sideBarstate);
 
   const params = useParams<{ searchQuery: string }>();
 
