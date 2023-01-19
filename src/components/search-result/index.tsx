@@ -19,7 +19,7 @@ const index = (props: Props) => {
       try {
         const response = await search(`test`);
         if (response.status === 200) {
-          setSearchData(response.data);
+          setSearchData(response.data.item);
         }
       } catch (error) {
         console.log(error);
