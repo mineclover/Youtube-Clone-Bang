@@ -4,7 +4,7 @@ import styles from './WideSideBar.module.scss';
 
 type Props = {};
 
-const Item1 = (props: Props) => {
+const Item11 = (props: Props) => {
   return (
     <>
       <Link to="/" id="icon-box" className={styles.sideBarIconWrapper}>
@@ -95,4 +95,4 @@ const Item1 = (props: Props) => {
   );
 };
 
-export default Item1;
+export default Item11;

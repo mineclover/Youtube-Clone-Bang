@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './WideSideBar.module.scss';
+import styles from './wideSideBar.module.scss';
 import Item11 from './Item11';
 import Item2 from './Item2';
 import Item3 from './Item3';
