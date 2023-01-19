@@ -1,5 +1,8 @@
-$color-gray: #999;
-
+$color-gray: #676767;
+a {
+  text-decoration: none;
+  color: #000;
+}
 li {
   display: flex;
   margin-bottom: 10px;
@@ -52,10 +55,10 @@ li {
         &::before {
           content: '';
           position: absolute;
-          top: 6px;
+          top: 9px;
           left: -13px;
           width: 3px;
-          height: 3px;
+          height: 2px;
           border-radius: 50px;
           background-color: #999;
           margin: 0 5px;
