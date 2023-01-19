@@ -9,6 +9,7 @@ function App() {
   return (
     <RecoilRoot>
       <Header />
+
       <Outlet />
     </RecoilRoot>
   );

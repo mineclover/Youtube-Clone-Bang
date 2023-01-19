@@ -30,7 +30,7 @@ export const search = (keyword: string, data: object = {}) => {
  */
 export const videoInfo = (videoId: string, data: object = {}) => {
   const sending = {
-    part: ['snippet', 'contentDetails', 'player', 'statistics'],
+    part: 'snippet, contentDetails, player, statistics',
     id: videoId,
   };
   return instance.get(`/videos`, { params: { ...sending, ...data } });
@@ -44,7 +44,7 @@ export const videoInfo = (videoId: string, data: object = {}) => {
  */
 export const channelInfo = (channelId: string, data: object = {}) => {
   const sending = {
-    part: ['snippet', 'statistics', 'contentDetails'],
+    part: 'snippet,statistics,contentDetails',
     id: channelId,
   };
   return instance.get(`/channels`, { params: { ...sending, ...data } });

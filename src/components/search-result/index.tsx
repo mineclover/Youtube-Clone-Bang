@@ -6,7 +6,9 @@ import { sideBarstate } from '../../Atom';
 import { useRecoilState } from 'recoil';
 import { useState, useEffect } from 'react';
 import List from './List';
-import { search } from '../../api/axios';
+import { search, videoInfo, channelInfo, relatedToVideo, commentThreads } from '../../api/axios';
+
+import { useParams } from 'react-router-dom';
 
 type Props = {};
 
@@ -14,19 +16,27 @@ const index = (props: Props) => {
   const [searchData, setSearchData] = useState([]);
   const [sideBar, setSideBar] = useRecoilState(sideBarstate);
 
+  const params = useParams<{ searchQuery: string }>();
+
   useEffect(() => {
+    // 렌더링 시작
+    console.time('rendering');
     const searchResult = async () => {
-      try {
-        const response = await search(`test`);
-        if (response.status === 200) {
-          setSearchData(response.data);
-        }
-      } catch (error) {
-        console.log(error);
+      let toggle = false;
+      const response: any = await search(`${params.searchQuery}`).catch((err) => {
+        toggle = err ? true : false;
+      });
+      if (toggle) {
+        console.log('error');
+        setSearchData([]);
+      } else {
+        console.log('success');
+        setSearchData(response.data.items);
+        console.timeEnd('rendering');
       }
     };
     searchResult();
-  }, []);
+  }, [params.searchQuery]);
 
   console.log(searchData);
 
