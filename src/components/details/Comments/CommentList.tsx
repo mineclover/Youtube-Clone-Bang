@@ -21,6 +21,7 @@ const Commentlist = (Props: Props) => {
       try {
         const res = await commentThreads(videoId, data);
         setCommentList(res.data.items);
+        console.log(res.data.items);
       } catch (error) {
         if (error instanceof Error) alert('조회 실패:' + error.message);
         else alert('조회실패');

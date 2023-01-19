@@ -4,6 +4,14 @@
   align-items: center;
 }
 
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
 #comments {
   max-width: calc((100vh - (56px + 24px + 136px)) * (16 / 9));
   min-width: calc(360px * (16 / 9));

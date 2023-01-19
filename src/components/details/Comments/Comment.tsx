@@ -5,7 +5,7 @@ import dayjs, { Dayjs } from 'dayjs';
 import useDay from '../../../hooks/useDay';
 import styles from './Comments.module.scss';
 import { commentThreads } from '../../../api/axios';
-// import Reply from './Reply';
+import Reply from './Reply';
 
 type Props = {
   comment: any;
