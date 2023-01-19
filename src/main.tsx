@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-// import './index.css';
+import './index.css';
 import MainPage from './components/main-page';
 import SearchResult from './components/search-result';
 import Video from './components/details';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFound from './pages/common/NotFound';
-import Details from './components/details';
 
 const router = createBrowserRouter([
   {
@@ -23,8 +22,5 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  // <React.StrictMode>
-  // <RouterProvider router={router} />
-  <Details />
-  // </React.StrictMode>
+  <RouterProvider router={router} />
 );

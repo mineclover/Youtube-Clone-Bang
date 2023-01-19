@@ -1,20 +1,25 @@
 .flex {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 #comments {
   max-width: calc((100vh - (56px + 24px + 136px)) * (16 / 9));
   min-width: calc(360px * (16 / 9));
+  > div {
+    margin-bottom: 20px;
+  }
 }
 
 .commentItem {
   display: flex;
+  gap: 10px;
   margin-bottom: 16px;
 }
 
 .commentInput {
-  width: 100%;
+  width: calc(100% - 50px);
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   &:focus {
@@ -25,7 +30,6 @@
 
 .profileImg {
   display: inline-block;
-  margin-right: 10px;
   width: 40px;
   height: 40px;
   background-color: lightgray;
