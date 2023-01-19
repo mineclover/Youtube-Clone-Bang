@@ -3,14 +3,14 @@ import Navigation from './Navigation';
 import AppLogo from './AppLogo';
 import styles from './header.module.scss';
 
-type Props = {};
-
-const Left = (props: Props) => {
+const Left = () => {
   return (
     <div className={styles.areaComponent}>
       <Navigation />
       <AppLogo />
-      <span id="country-code">KR</span>
+      <span id="country-code" className={styles.countryCode}>
+        KR
+      </span>
     </div>
   );
 };

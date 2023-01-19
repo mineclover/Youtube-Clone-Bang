@@ -6,7 +6,7 @@ type Props = {};
 
 const AppLogo = (props: Props) => {
   return (
-    <Link to="/" className={styles.appIcon}>
+    <Link to="/" className={styles.appLogo}>
       <svg
         viewBox="0 0 90 20"
         preserveAspectRatio="xMidYMid meet"

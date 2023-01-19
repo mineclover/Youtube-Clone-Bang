@@ -44,7 +44,7 @@ export const videoInfo = (videoId: string, data: object = {}) => {
  */
 export const channelInfo = (channelId: string, data: object = {}) => {
   const sending = {
-    part: ['snippet', 'statistics', 'contentDetails'],
+    part: 'snippet,statistics,contentDetails',
     id: channelId,
   };
   return instance.get(`/channels`, { params: { ...sending, ...data } });
