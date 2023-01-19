@@ -12,10 +12,6 @@ type Props = {
 };
 
 const Comment = ({ comment }: Props) => {
-  function toggleShow() {
-    setIsShow(!isShow);
-  }
-
   const displayName = comment.snippet.topLevelComment.snippet.authorDisplayName;
   const profileImg = comment.snippet.topLevelComment.snippet.authorProfileImageUrl;
   const text = comment.snippet.topLevelComment.snippet.textOriginal;
