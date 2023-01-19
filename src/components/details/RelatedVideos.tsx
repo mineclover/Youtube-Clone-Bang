@@ -1,19 +1,17 @@
 import { useEffect, useState } from 'react';
 import { relatedToVideo } from '../../api/axios';
+import { Link } from 'react-router-dom';
 import Video from './Video';
 
-const RelatedVideos = () => {
-  let videoId = 'iuPe-dGfCz8';
-  let channelInfo = 'UCeytlvCvwXylrANAtQHmNQg';
+type Props = {
+  videoId: string;
+};
 
+const RelatedVideos = ({ videoId }: Props) => {
   const [relatedVideos, setRelatedVideos] = useState({});
 
   const data = {
-    part: 'snippet',
-    channelInfo: `${channelInfo}`,
     maxResults: 2,
-    relatedToVideoId: `${videoId}`,
-    type: 'video',
   };
 
   useEffect(() => {
@@ -33,7 +31,11 @@ const RelatedVideos = () => {
       <ul>
         {Array.isArray(relatedVideos) ? (
           relatedVideos.map((item, idx) => {
-            return <Video key={idx} item={item} />;
+            return (
+              <Link to={'/video/' + item.id.videoId}>
+                <Video key={idx} item={item} />
+              </Link>
+            );
           })
         ) : (
           <div>
