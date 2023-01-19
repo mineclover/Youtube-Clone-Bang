@@ -4,6 +4,7 @@ import WideSideBar from '../wide-side-bar';
 import styles from './MainPage.module.scss';
 import { sideBarstate } from '../../Atom';
 import { useRecoilState } from 'recoil';
+import MainPage from './main-page';
 
 type Props = {};
 
@@ -12,7 +13,7 @@ const index = (props: Props) => {
   return (
     <div className={styles.frame}>
       {sideBar ? <WideSideBar /> : <SideBar />}
-      main-pages
+      <MainPage></MainPage>
     </div>
   );
 };
