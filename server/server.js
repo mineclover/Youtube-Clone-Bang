@@ -28,22 +28,22 @@ const channel = JSON.parse(channelInfo);
 const videoData = JSON.parse(videoInfo);
 
 app.get('/search', (req, res) => {
-  console.log('search', req.query);
+  console.log('search\n', req.query);
   res.status(201).json(search);
 });
 
 app.get('/commentThreads', (req, res) => {
-  console.log('commentThreads', req.query);
+  console.log('commentThreads\n', req.query);
   res.json(commentData);
 });
 
 app.get('/channels', (req, res) => {
-  console.log('channels', req.query);
+  console.log('channels\n', req.query);
   res.json(channel);
 });
 
 app.get('/videos', (req, res) => {
-  console.log('videos', req.query);
+  console.log('videos\n', req.query);
   res.json(videoData);
 });
 
