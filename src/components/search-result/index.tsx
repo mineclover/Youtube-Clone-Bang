@@ -2,26 +2,36 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import List from './List';
-import { instance } from '../../api/axios';
+import { search, videoInfo, channelInfo, relatedToVideo, commentThreads } from '../../api/axios';
+
+import { useParams } from 'react-router-dom';
 
 type Props = {};
 
 const index = (props: Props) => {
   const [searchData, setSearchData] = useState([]);
 
+  const params = useParams<{ searchQuery: string }>();
+
   useEffect(() => {
+    // 렌더링 시작
+    console.time('rendering');
     const searchResult = async () => {
-      try {
-        const response = await instance.get(`/search?part=snippet&maxResults=10&q={animal}`);
-        if (response.status === 200) {
-          setSearchData(response.data);
-        }
-      } catch (error) {
-        console.log(error);
+      let toggle = false;
+      const response: any = await search(`${params.searchQuery}`).catch((err) => {
+        toggle = err ? true : false;
+      });
+      if (toggle) {
+        console.log('error');
+        setSearchData([]);
+      } else {
+        console.log('success');
+        setSearchData(response.data.items);
+        console.timeEnd('rendering');
       }
     };
     searchResult();
-  }, []);
+  }, [params.searchQuery]);
 
   console.log(searchData);
 
