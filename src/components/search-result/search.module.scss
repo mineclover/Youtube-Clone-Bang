@@ -3,10 +3,34 @@
 
   .lists {
     display: flex;
+    margin: 20px;
+    min-width: 300px;
   }
+
   .img {
-    width: 400px;
-    height: 220px;
+    object-fit: cover;
+    width: 330px;
+    height: 180px;
+    border-radius: 10px;
+  }
+
+  .content {
+    padding: 0 20px;
+    color: #848484;
+    .title {
+      font-size: 20px;
+      color: black;
+      margin-bottom: 10px;
+    }
+    .channel {
+      margin: 10px 0;
+    }
+  }
+
+  .miniImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     object-fit: cover;
   }
 }

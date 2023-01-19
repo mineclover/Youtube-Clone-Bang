@@ -3,15 +3,11 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import List from './List';
 import styles from './search.module.scss';
+import { search } from '../../api/axios';
 
 type Props = {};
 
-export const instance = axios.create({
-  baseURL: 'https://youtube.googleapis.com/youtube/v3',
-  params: {
-    key: import.meta.env.VITE_API_KEY,
-  },
-});
+const keyword = 'puppy';
 
 const index = (props: Props) => {
   const [searchData, setSearchData] = useState([]);
@@ -19,7 +15,7 @@ const index = (props: Props) => {
   useEffect(() => {
     const searchResult = async () => {
       try {
-        const response = await instance.get(`/search?part=snippet&maxResults=10&q={cat}`);
+        const response = await search(keyword);
         if (response.status === 200) {
           setSearchData(response.data.items);
         }
