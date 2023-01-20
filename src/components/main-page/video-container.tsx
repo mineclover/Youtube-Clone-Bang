@@ -44,7 +44,11 @@ const videoContainer = (props: Props) => {
       }
       temp.push(searchData[i]);
     }
+    while (temp.length < columns) {
+      temp.push({ tag: 'empty' });
+    }
     videoArray.push(temp);
+    console.log('videoArray', videoArray);
     return videoArray;
   }
 
