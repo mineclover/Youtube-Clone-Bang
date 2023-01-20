@@ -14,7 +14,7 @@ const videoContainer = (props: Props) => {
     console.time('rendering');
     const searchResult = async () => {
       let toggle = false;
-      const response: any = await search(`고양이`).catch((err) => {
+      const response: any = await search(`react`).catch((err) => {
         toggle = err ? true : false;
       });
       if (toggle) {
@@ -23,7 +23,6 @@ const videoContainer = (props: Props) => {
       } else {
         console.log('success');
         setSearchData(response.data.items);
-        console.log(searchData);
         console.timeEnd('rendering');
       }
     };
