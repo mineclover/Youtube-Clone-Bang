@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Filter from './filters';
-import VideoContainer from './video-container';
 import styles from './MainPage.module.scss';
+import VideoContainer from './video-container';
 
 type Props = {};
 
