@@ -1,0 +1,14 @@
+.detailWrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 60px;
+  .videoContent {
+    max-width: 1280px;
+    width: calc(100% - 420px);
+    iframe {
+      outline: none;
+      border: none;
+    }
+  }
+}

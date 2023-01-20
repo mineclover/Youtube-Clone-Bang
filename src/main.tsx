@@ -4,7 +4,7 @@ import App from './App';
 import './index.css';
 import MainPage from './components/main-page';
 import SearchResult from './components/search-result';
-import Video from './components/details';
+import Details from './components/details';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFound from './pages/common/NotFound';
 
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, path: '/', element: <MainPage /> },
       { path: '/search/:searchQuery', element: <SearchResult /> },
-      { path: '/video/:videoId', element: <Video /> },
+      { path: '/video/:videoId', element: <Details /> },
     ],
   },
 ]);
