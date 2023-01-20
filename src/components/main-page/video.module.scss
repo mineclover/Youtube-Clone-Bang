@@ -3,27 +3,25 @@
   width: 100%;
   height: fit-content;
   flex-direction: row;
+  flex-wrap: wrap;
   column-gap: 16px;
   position: relative;
-  background: #00ff00;
+
   align-items: flex-start;
+
   .videoWarp {
     display: flex;
     flex-direction: column;
     padding: 40px 0px;
-
     gap: 8px;
-    height: 100%;
-
     position: relative;
 
-    background: #ffff00;
     align-items: flex-start;
     flex: none;
     flex-grow: 1;
 
     .videoView {
-      width: 100%;
+      width: 300px;
       aspect-ratio: 16 / 9;
 
       background: #a0a0a0;
@@ -45,7 +43,6 @@
       height: 60px;
       flex-grow: 1;
 
-      background: #e3e1e1;
       border-radius: 16px;
 
       /* Inside auto layout */
@@ -56,7 +53,6 @@
         width: 60px;
         height: 60px;
 
-        background: #a6a6a6;
         border-radius: 30px;
 
         /* Inside auto layout */
@@ -68,7 +64,6 @@
       .videoTitle {
         height: 60px;
 
-        background: #a6a6a6;
         border-radius: 8px;
 
         /* Inside auto layout */
@@ -78,8 +73,6 @@
       .videoToggle {
         width: 32px;
         height: 60px;
-
-        background: #db7979;
 
         /* Inside auto layout */
 
@@ -93,7 +86,6 @@
       width: 100%;
       height: 24px;
 
-      background: #a6a6a6;
       border-radius: 12px;
 
       /* Inside auto layout */
@@ -104,7 +96,6 @@
       width: 100%;
       height: 24px;
 
-      background: #a6a6a6;
       border-radius: 30px;
 
       /* Inside auto layout */
